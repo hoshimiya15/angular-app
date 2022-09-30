@@ -12,3 +12,7 @@ h1 {
 p {
     font-size: 18pt;
 }
+.red {
+    color: white;
+    background-color: red;
+}
