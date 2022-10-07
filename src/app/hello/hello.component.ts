@@ -4,27 +4,22 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-hello',
   templateUrl: './hello.component.html',
-  styleUrls: ['./hello.component.css']
+  styleUrls: ['./hello.component.css'],
 })
 export class HelloComponent implements OnInit {
-  title:string;
-  message:string;
-  styleClass:string;
+  title: string;
+  message: string;
+  count: number;
 
-  constructor() {
-    setInterval(
-      () => {
-        this.styleClass = this.styleClass == 'red' ? '' :'red';
-        console.log(this.styleClass);
-      },
-      1000
-    );
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.title = 'Hello-app';
     this.message = 'This is My First Component!!';
-    this.styleClass = 'red';
+    this.count = 0;
   }
 
+  doClick() {
+    this.message = ++this.count + '回クリックしました';
+  }
 }
