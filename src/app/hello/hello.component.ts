@@ -9,17 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class HelloComponent implements OnInit {
   title: string;
   message: string;
-  visible: boolean;
+  data: string[];
 
   constructor() {}
 
   ngOnInit(): void {
     this.title = 'Hello-app';
-    this.message = 'This is My First Component!!';
-    this.visible = true;
-  }
-
-  doClick() {
-    this.visible = !this.visible;
+    this.message = 'data list.';
+    this.data = [
+      '最初の項目です。',
+      '2番目の項目です。',
+      '最後の項目です。',
+    ];
   }
 }
