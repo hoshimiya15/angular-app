@@ -9,18 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class HelloComponent implements OnInit {
   title: string;
   message: string;
-  input: string;
+  visible: boolean;
 
   constructor() {}
 
   ngOnInit(): void {
     this.title = 'Hello-app';
     this.message = 'This is My First Component!!';
-    this.input = '';
+    this.visible = true;
   }
 
-  doType(val:string) {
-    this.input = val;
-    this.message = 'you type: ' + this.input;
+  doClick() {
+    this.visible = !this.visible;
   }
 }
