@@ -9,17 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class HelloComponent implements OnInit {
   title: string;
   message: string;
-  count: number;
+  input: string;
 
   constructor() {}
 
   ngOnInit(): void {
     this.title = 'Hello-app';
     this.message = 'This is My First Component!!';
-    this.count = 0;
+    this.input = '';
   }
 
-  doClick() {
-    this.message = ++this.count + '回クリックしました';
+  doType(val:string) {
+    this.input = val;
+    this.message = 'you type: ' + this.input;
   }
 }
