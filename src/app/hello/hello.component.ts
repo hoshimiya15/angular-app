@@ -9,17 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class HelloComponent implements OnInit {
   title: string;
   message: string;
-  switch: string;
 
   constructor() {}
 
   ngOnInit(): void {
     this.title = 'Hello-app';
-    this.message = 'select menu: ';
-    this.switch = 'one';
-  }
-
-  doSelect(val: any) {
-    this.switch = val;
+    this.message = 'Font size';
   }
 }
