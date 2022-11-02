@@ -3,11 +3,15 @@
   <p>{{ message }}</p>
   <form [formGroup]="myControl" (ngSubmit)="onSubmit()">
     <div>
-      <select formControlName="control">
-        <option>Windows</option>
-        <option>macOS</option>
-        <option>ChromeOS</option>
+      <select formControlName="control" size="5" multiple>
+        <option>android</option>
+        <option>iOS</option>
+        <option>blackberry</option>
+        <option>symbian</option>
+        <option>Fucsia</option>
       </select>
+    </div>
+    <div>
       <input type="submit" value="click">
     </div>
   </form>
