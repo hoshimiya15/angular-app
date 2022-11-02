@@ -10,17 +10,22 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class HelloComponent implements OnInit {
   title: string;
   message: string;
-  myControl: FormControl;
+  myControl: FormGroup;
 
   constructor() {}
 
   ngOnInit(): void {
     this.title = 'Hello-app';
     this.message = 'FormControlを使う';
-    this.myControl = new FormControl('ok.');
+    this.myControl = new FormGroup({
+      name: new FormControl(''),
+      mail: new FormControl(''),
+      age: new FormControl(0),
+    });
   }
 
-  doClick() {
-    this.message = '「' + this.myControl.value + '」と書きましたね。';
+  onSubmit() {
+    let result = this.myControl.value;
+    this.message = JSON.stringify(result);
   }
 }
