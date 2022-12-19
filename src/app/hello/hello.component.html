@@ -1,39 +1,23 @@
 <div id="body">
   <h1>{{ title }}</h1>
   <p>{{ message }}</p>
-  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <form (ngSubmit)="onSubmit()" [(formGroup)]="myControl">
     <table>
-      <tr>
-        <th>
-          Name
-        </th>
-        <td>
-          <input type="text" name="name" ngModel>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          Mail
-        </th>
-        <td>
-          <input type="text" name="mail" ngModel>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          age
-        </th>
-        <td>
-          <input type="number" name="age" ngModel>
-        </td>
-      </tr>
-      <tr>
-        <th>
-        </th>
-        <td>
-          <input type="submit" value="click">
-        </td>
-      </tr>
+      <tr><th>Name</th><td>
+        <div *ngIf="name!.invalid">Nameは必須項目です。</div>
+        <div><input type="text" formControlName="name"></div>
+      </td></tr>
+      <tr><th>Mail</th><td>
+        <div *ngIf="mail!.invalid">メールアドレスが必要です。</div>
+        <div><input type="text" formControlName="mail"></div>
+      </td></tr>
+      <tr><th>age</th><td>
+        <div *ngIf="age!.invalid">1歳以上150際以下で入力してください。</div>
+        <div><input type="number" formControlName="age"></div>
+      </td></tr>
+      <tr><th></th><td>
+        <input [disabled]="myControl.invalid" type="submit" value="click">
+      </td></tr>
     </table>
   </form>
 </div>
